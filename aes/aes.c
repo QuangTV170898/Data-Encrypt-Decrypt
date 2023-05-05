@@ -1,10 +1,7 @@
-#include <stdio.h>  // for printf
-#include <stdlib.h> // for malloc
+#include <stdio.h>  
+#include <stdlib.h> 
 #include <string.h>
 #include "aes.h"
-// AES implementation in C
-// Based on the tutorial in https://cboard.cprogramming.com/c-programming/87805-[tutorial]-implementing-advanced-encryption-standard.html
-// Author: Meysam Parvizi
 
 #define UNKNOWN_KEYSIZE 11
 #define MEMORY_ALLOCATION_PROBLEM 33
@@ -116,85 +113,6 @@ static char aes_decrypt(unsigned char *input, unsigned char *output, unsigned ch
 
 unsigned char key[16] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.'};
 enum keySize size = SIZE_16;
-
-// int main(int argc, char *argv[])
-// {
-//     // the expanded keySize
-//     int expandedKeySize = 192;
-
-//     // the expanded key
-//     unsigned char expandedKey[expandedKeySize];
-
-//     // the cipher key
-//     unsigned char key[16] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.'};
-//     // unsigned char key[24] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.','1','1','1','1','2','2','2','2'};
-
-//     // the cipher key size
-//     enum keySize size = SIZE_16;
-//     // enum keySize size = SIZE_24;
-
-//     // the plaintext
-//     unsigned char plaintext[16] = {'a', 'b', 'c', 'd', 'e', 'f', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
-//     // unsigned char plaintext[24] = {'a', 'b', 'c', 'd', 'e', 'f','g','h','i','j','k','l','m','n','1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
-//     // the ciphertext
-//     unsigned char ciphertext[16];
-//     // unsigned char ciphertext[24];
-
-//     // the decrypted text
-//     unsigned char decryptedtext[16];
-//     // unsigned char decryptedtext[24];
-
-//     int i;
-
-//     printf("AES algorithm implemented in C\n");
-
-//     printf("\nCipher Key:\n");
-//     for (i = 0; i < size; i++)
-//     {
-//         printf("%2.2x%c", key[i], ((i + 1) % size) ? ' ' : '\n');
-//     }
-
-//     // Test the Key Expansion
-//     expandKey(expandedKey, key, size, expandedKeySize);
-
-//     printf("\nExpanded Key:\n");
-//     for (i = 0; i < expandedKeySize; i++)
-//     {
-//         printf("%2.2x%c", expandedKey[i], ((i + 1) % size) ? ' ' : '\n');
-//     }
-
-//     printf("\nPlaintext:\n");
-//     for (i = 0; i < size; i++)
-//     {
-//         printf("%2.2x%c", plaintext[i], ((i + 1) % size) ? ' ' : '\n');
-//     }
-//     char plain_str[size+1];
-//     memcpy(plain_str, plaintext, size); plain_str[size] = 0;
-//     printf("\nPlaintext: %s\n", plain_str);
-
-//     // AES Encryption
-//     aes_encrypt(plaintext, ciphertext, key, size);
-
-//     printf("\nCiphertext:\n");
-//     for (i = 0; i < size; i++)
-//     {
-//         printf("%2.2x%c", ciphertext[i], ((i + 1) % size) ? ' ' : '\n');
-//     }
-//     char cipher_str[size+1];
-//     memcpy(cipher_str, ciphertext,size); cipher_str[size] = 0;
-//     printf("\nCiphertext:%s\n",cipher_str);
-//     // AES Decryption
-//     aes_decrypt(ciphertext, decryptedtext, key, size);
-//     printf("\nDecryptedtext:\n");
-//     for (i = 0; i < size; i++)
-//     {
-//         printf("%2.2x%c", decryptedtext[i], ((i + 1) % size) ? ' ' : '\n');
-//     }
-//     char decrypted_str[size+1];
-//     memcpy(decrypted_str,decryptedtext,size); decrypted_str[size] = 0;
-//     printf("\nDecryptedtext: %s\n",decrypted_str);
-//     return 0;
-// }
 
 char* aes_128_encrypt_full(unsigned char *input){
     char cipher_str[128];
