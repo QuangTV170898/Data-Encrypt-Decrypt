@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "b64.h"
+#include <unistd.h>
 void main()
 {   
     char str[]="\"SSID\":\"HELLO\"";
@@ -12,4 +13,5 @@ void main()
     printf("Decrypted String: [%s]\n", js_str);
     free(b64_str);
     free(js_str);
+    
 }
